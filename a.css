@@ -63,7 +63,7 @@
   width: 100%;
 }
 #par1{
-  height: 80vh;
+  height: 40vh;
   width: 100%;
   /*background-color: red;*/
   background-image: url("memublur.jpg");
@@ -104,4 +104,14 @@
   display: inline-block;
   background-color: #9DE1CC;
   width: 300px;
+}
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+a:hover {
+  color:#000000; 
+  text-decoration:none; 
+  cursor:pointer;  
 }
