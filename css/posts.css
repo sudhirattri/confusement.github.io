@@ -27,7 +27,13 @@ figure figcaption {
     padding: 20px;
     margin: 20px;
     width : 70%;
+    border-radius: 10px;
 }
 .card-title{
     text-align: left;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #444;
+}
+.card-text{
+    padding: 10px;
 }
