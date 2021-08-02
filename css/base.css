@@ -1,0 +1,157 @@
+body {
+    font-family: 'Fira Sans', sans-serif;
+    margin: 0px;
+}
+
+#main {
+    background-color: #FFF;
+    margin: 0px;
+    padding: 0px;
+    /*margin-top: 100px;*/
+}
+.l_bar_sm{
+    width:100vw;
+    box-sizing: border-box;
+    background-color: #FFF;
+    font-family: Roboto;
+    font-size: 1.3em;
+    padding: 10px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    border-bottom: 2px solid #CCC;
+    z-index: 1;
+    margin: 0px;
+    margin-bottom: 10px;
+}
+.l_bar {
+    width:100vw;
+    box-sizing: border-box;
+    background-color: #FFF;
+    font-family: Roboto;
+    font-size: 1.2em;
+    padding: 5px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    border-bottom: 2px solid #CCC;
+    z-index: 1;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+}
+.header-title{
+    align-self: center;
+    text-align: center;
+    padding-left: 20px;
+}
+.nav_clear {
+    position: relative;
+    visibility: hidden;
+}
+.dropdown{
+    display: inline;
+}
+.dropdown:hover .drop-content {
+    display: flex;
+}
+.drop-content{
+    display: none;
+    position: relative;
+    flex-direction: column;
+    z-index: 2;
+    margin-top: 20px;
+    /* margin-left: -10; */
+}
+@media only screen and (max-width: 800px) {
+    .togs {
+        /* background-color: red; */
+        /* display: grid; */
+    }
+    .l_bar {
+        /* font-size: 1em;
+        position: relative; */
+        display: none;
+    }
+    .l_bar_sm{
+        display: block;
+    }
+    
+}
+
+@media only screen and (min-width: 800px) {
+    .togs {
+        /* background-color: blue; */
+    }
+    .l_bar {
+        /* font-size: 1em;
+        position: relative; */
+        display: flex;
+    }
+    .l_bar_sm{
+        display: none;
+    }
+}
+
+
+.i_bar {
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+    transition: border-color 0.5s, background-color 0.5s;
+    margin: 5px;
+    border: 1px solid #FFF;
+}
+
+#act {
+    background-color: #9DE1CC;
+}
+
+#menu {
+    float: right;
+    margin-right: 20px;
+}
+
+.i_bar:hover {
+    border-color: #555;
+    box-shadow: 0px 8px 16px 0px #AAA;
+}
+
+.i_bar:active {
+    border-color: #9DE1CC;
+    box-shadow: 0px 8px 16px 0px #AAA;
+    transition: border-color 0.1s;
+}
+.a_bar {
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+    color: #333;
+    text-decoration: none;
+    width: 100%;
+    cursor: pointer;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.page{
+    padding: 5px;
+    padding-top: 5px;
+}
+
+.togs{
+    margin: auto;
+    width: max-content;
+}
+h2, h3{
+    text-align: center;
+    margin: 10px;
+}

@@ -1,0 +1,33 @@
+h2{
+    margin-top: 10px;
+}
+.container{
+    margin : 30px;
+    font-size: 1.3em;
+}
+.img-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+img{
+    align-self: center;
+    width: 60vw;
+    height: auto;
+    border: 1px solid #555;
+    box-shadow: 0px 8px 16px 0px #AAA;
+}
+figure figcaption {
+    text-align: center;
+}
+.card{
+    border: 1px solid #555;
+    /* box-shadow: 0px 8px 16px 0px #AAA; */
+    align-self: center;
+    padding: 20px;
+    margin: 20px;
+    width : 70%;
+}
+.card-title{
+    text-align: left;
+}
