@@ -1,0 +1,30 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+<div class="card-list padded-content">
+  {% for page in section.pages %}
+  <a class="card" href="{{ page.path }}">
+    {% if page.extra.image %}
+    {% set image_parent = page.path | replace(from="_index.md", to="") %}
+    <div class="card-image">
+      <img src="{{image_parent}}{{page.extra.image}}" class="centered-card-image" />
+    </div>
+    {% else %}
+    <div class="card-image">
+      <img src="/assets/web_news_new.svg" class="centered-card-image" style="max-width: 15rem;" />
+    </div>
+    {% endif %}
+    <div class="card-text">
+      <div class="card-title">
+        {{ page.title }}
+      </div>
+      <div class="card-subtitle">
+        Written {{ page.date | date(format="%B %d, %Y") }} by {{ page.extra.author }}
+      </div>
+      <div class="card-description">
+        {{ page.summary | striptags | truncate(length=180) | safe}}
+      </div>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+{% endblock content %}
