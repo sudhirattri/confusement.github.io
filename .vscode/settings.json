@@ -10,6 +10,10 @@
         "**/links": true,
         "**/showcase": true,
         "**/v0": true,
+        "**/v1": true,
+        "**/sudhirattri.com/.cache": true,
+        "**/sudhirattri.com/.node_modules": true,
+        "**/sudhirattri.com/public": true,
         "**/index.html": true,
     },
 }
