@@ -1,0 +1,9 @@
+.goto{
+  font-size: 1.1rem;
+}
+.goto-active{
+  border-bottom: 3px solid var(--bottom-border);
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  padding-bottom: 5px !important;
+}
