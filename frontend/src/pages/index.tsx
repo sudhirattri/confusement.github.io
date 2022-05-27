@@ -1,46 +1,52 @@
-import * as React from "react"
-
-import BaseLayout from "../layouts/base"
+import React, { ReactNode, useEffect, useState } from "react"
+import { withPrefix } from "gatsby";
+import Helmet from "react-helmet";
+// import "../sass/site.scss"
+import { CloudyNightOutline, SunnyOutline, MenuOutline } from 'react-ionicons'
+import DarkModeToggle from "react-dark-mode-toggle";
 
 const IndexPage = () => {
-  return (
-    <main>
-      <BaseLayout props={{}}>
-        <div className="container">
-          <br />
-          <br />
-          <h5>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </h5>
-          <br />
-          <h5>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </h5>
-          <br />
-          <h5>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </h5>
-          <br />
-          <h5>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </h5>
-          <br />
-          <h5>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </h5>
-          <br />
-          <h5>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </h5>
-          <br />
-          <h5>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </h5>
-        </div>
+  const [theme, setTheme] = useState("dark");
 
-      </BaseLayout>
-      {/* <a href="#" role="button" className="outline">Primary</a> */}
-    </main>
+  const scrollHandler = () => {
+    console.log(window.scrollY)
+    // if (window.scrollY >= 66) {
+    //   setNavbar(true)
+    // } else {
+    //   setNavbar(false)
+    // }
+  }
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      let toggle: HTMLElement = document.getElementById("theme-toggle")!;
+      let storedTheme = localStorage.getItem('theme') || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      if (storedTheme)
+        document.documentElement.setAttribute('data-theme', storedTheme)
+      setTheme(storedTheme);
+      window.addEventListener("scroll", scrollHandler)
+    }
+    // switchTheme(undefined)
+  }, []);
+  function switchTheme(event: any) {
+    if (typeof window !== 'undefined') {
+      let currentTheme = document.documentElement.getAttribute("data-theme");
+      let targetTheme = "light";
+
+      if (currentTheme === "light") {
+        targetTheme = "dark";
+      }
+      setTheme(targetTheme);
+      document.documentElement.setAttribute('data-theme', targetTheme)
+      localStorage.setItem('theme', targetTheme);
+    }
+  }
+  return (
+    <React.Fragment>
+      <Helmet title="foo bar" defer={false} />
+      <main>
+        <h2>Hello</h2>
+      </main>
+    </React.Fragment>
   )
 }
 
