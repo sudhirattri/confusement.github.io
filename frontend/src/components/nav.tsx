@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useState } from "react"
+import React, { ReactNode, useEffect } from "react"
 import {
   Box,
   Flex,
@@ -78,7 +78,7 @@ export default function Navbar() {
               onClick={isOpen ? onClose : onOpen}
             />
             <HStack spacing={8} alignItems={'center'}>
-              <Box>tBleko</Box>
+              <Box>sudhirattri.com</Box>
             </HStack>
             <HStack spacing={8} alignItems={'center'}>
               <HStack
@@ -91,6 +91,7 @@ export default function Navbar() {
               </HStack>
             </HStack>
             <Flex alignItems={'center'}>
+              {useColorModeValue('#light', '#dark')}
               <IconButton
                 size='md'
                 fontSize='lg'
@@ -132,7 +133,7 @@ export default function Navbar() {
             <Box pb={4} display={{ md: 'none' }}>
               <Stack as={'nav'} spacing={4}>
                 {Links.map((link) => (
-                  <NavLink key={link}>{link}</NavLink>
+                  <NavLink key={link.link}>{link.name}</NavLink>
                 ))}
               </Stack>
             </Box>

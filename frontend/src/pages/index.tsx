@@ -1,15 +1,27 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import Helmet from "react-helmet"
 
 import Navbar from "../components/nav"
 import { str1, str2 } from "../constants/txt";
-import { ChakraProvider, Text, SimpleGrid, Box } from "@chakra-ui/react"
+import { ChakraProvider, Text, Heading, Box, Flex, Center, Divider, Link, useColorModeValue, chakra } from "@chakra-ui/react"
 
 import theme from "../theme"
+import Home from "../components/home";
+import { useStaticQuery, graphql } from 'gatsby'
 
+import ShadertoyReact from 'shadertoy-react';
+// import { Spring, animated } from 'react-spring'
+// import { useVisibilityHook, LazyLoad } from 'react-observer-api';
+
+interface SwitchThemeProp {
+  changeTheme: (arg0: string) => any
+}
 
 const IndexPage = () => {
-
+  const [scheme, setScheme] = useState("dark")
+  function changeTheme(scheme: string) {
+    setScheme(scheme)
+  }
   const scrollHandler = () => {
     console.log(window.scrollY)
     // if (window.scrollY >= 66) {
@@ -18,17 +30,17 @@ const IndexPage = () => {
     //   setNavbar(false)
     // }
   }
-  useEffect(() => {
-    // if (typeof window !== 'undefined') {
-    //   let toggle: HTMLElement = document.getElementById("theme-toggle")!;
-    //   let storedTheme = localStorage.getItem('theme') || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-    //   if (storedTheme)
-    //     document.documentElement.setAttribute('data-theme', storedTheme)
-    //   setTheme(storedTheme);
-    //   window.addEventListener("scroll", scrollHandler)
-    // }
-    // switchTheme(undefined)
-  }, []);
+  // useEffect(() => {
+  // if (typeof window !== 'undefined') {
+  //   let toggle: HTMLElement = document.getElementById("theme-toggle")!;
+  //   let storedTheme = localStorage.getItem('theme') || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  //   if (storedTheme)
+  //     document.documentElement.setAttribute('data-theme', storedTheme)
+  //   setTheme(storedTheme);
+  //   window.addEventListener("scroll", scrollHandler)
+  // }
+  // switchTheme(undefined)
+  // }, []);
   function switchTheme(event: any) {
     // if (typeof window !== 'undefined') {
     //   let currentTheme = document.documentElement.getAttribute("data-theme");
@@ -42,23 +54,28 @@ const IndexPage = () => {
     //   localStorage.setItem('theme', targetTheme);
     // }
   }
+  // const { setElement, isVisible } = useVisibilityHook();
+  // useEffect(() => {
+  //   if (isVisible) {
+  //     console.log("yes is visible")
+  //   }
+  // }, [isVisible])
+
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
   return (
     <ChakraProvider theme={theme}>
       <React.Fragment>
-        <Helmet title="foo bar" defer={false} />
+        <Helmet title={data.site.siteMetadata.title} defer={false} />
         <Navbar />
-        <Box as='main' className='main-content' pt={{ base: '75', md: '75' }} w='full' maxW='8xl' mx='auto'>
-          <Box display={{ md: 'flex' }}>
-            <Box flex='1' minW='0' px={5}>
-              <Text>Sidebar {str1}</Text>
-            </Box>
-            <Box flex='3' minW='0'>
-              <Box id='content' px={5} mx='auto' minH='76vh'>
-                <Text>Main Content {str1}</Text>
-              </Box>
-            </Box>
-          </Box>
-        </Box>
+        <Home />
       </React.Fragment>
     </ChakraProvider >
   )

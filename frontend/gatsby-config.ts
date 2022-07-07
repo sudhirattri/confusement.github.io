@@ -5,7 +5,7 @@ import type {
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `sudhirattri.com`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://sudhirattri.com`
   },
   plugins: [{
     resolve: `gatsby-plugin-sass`,

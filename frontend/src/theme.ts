@@ -7,6 +7,10 @@ const theme = extendTheme({
     heading: "Fira Sans",
     mono: "Fira Mono",
   },
+  colors: {
+    body: "rgba(0.5,0.5,0.5,0.5)"
+  }
+
 })
 
 export default theme
