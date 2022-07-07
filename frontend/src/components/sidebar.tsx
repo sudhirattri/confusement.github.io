@@ -19,18 +19,18 @@ export default function Sidebar() {
         overscrollBehavior='contain'
         top='6.5rem'
         w='250px'
-        h='calc(100vh - 16.25rem)'
-        pr='0'
+        h='calc(100vh - 8.25rem)'
+        pr='2'
         pb='6'
-        pl='2'
+        pl='8'
         pt='4'
         overflowY='auto'
         className='sidebar-content'
         flexShrink={0}
         display={{ base: 'none', md: 'block' }}
-
+        fontSize='1.0em'
       >
-        <Box mt={5} mb={5}></Box>
+        <br />
         <Image
           margin={"auto"}
           borderRadius='full'
@@ -39,10 +39,11 @@ export default function Sidebar() {
           alt='Dan Abramov'
         />
         <Box mt={5} mb={5}></Box>
+        <br />
         <Center>
           <Heading as='h5' size='md'>Quick Links</Heading>
         </Center>
-        <Box mt={5} mb={5}></Box>
+        <br />
         <Center>
           <List spacing={2}>
             <ListItem>
@@ -72,12 +73,12 @@ export default function Sidebar() {
             </ListItem>
           </List>
         </Center>
-        <Box mt={5} mb={5}></Box>
+        <br />
         <Center>
           <Heading as='h5' size='md'>Recent Posts {useColorModeValue("light", "dark")}</Heading>
         </Center>
 
-        <Box mt={5} mb={5}></Box>
+        <br />
         <Center>
           <List spacing={3}>
             <ListItem>

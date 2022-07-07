@@ -29,10 +29,10 @@ export default function Home() {
   };
   return (
     <React.Fragment>
-      <Box as='main' className='main-content' pt={{ base: '75', md: '75' }} w='full' mx='auto' fontSize='1.2em' >
-        <Box display='flex' w={"80%"}>
+      <Box as='main' className='main-content' pt={{ base: '75', md: '75' }} w='full' mx='auto' fontSize='1.15em' >
+        <Box display='flex'>
           <Sidebar />
-          <Box flex='5' minW='0'>
+          <Box flex='5' >
             <Box id='content' px={0} mx='auto' minH='76vh'>
               <Flex>
                 <Box
