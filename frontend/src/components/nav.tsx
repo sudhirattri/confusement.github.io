@@ -67,7 +67,8 @@ export default function Navbar() {
         <Box
           style={{ "backdropFilter": "blur(6px)" }}
           bg={useColorModeValue('#FFFFFFCC', '#171923CC')} px={4} w='full' sx={{ "position": "fixed" }}
-        // _hover={{ color: 'gray.600' }}
+          // _hover={{ color: 'gray.600' }}
+          fontSize='1.15em'
         >
           <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
             <IconButton

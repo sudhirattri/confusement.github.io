@@ -12,22 +12,23 @@ const UpDownIcon = createIcon({
 export default function Sidebar() {
   return (
     <React.Fragment>
-      <Box
+      <Box flex='1'
         aria-label='Main Navigation'
         as='nav'
         pos='sticky'
         overscrollBehavior='contain'
         top='6.5rem'
-        w='210px'
+        w='250px'
         h='calc(100vh - 16.25rem)'
-        pr='2'
+        pr='0'
         pb='6'
-        pl='8'
+        pl='2'
         pt='4'
         overflowY='auto'
         className='sidebar-content'
         flexShrink={0}
         display={{ base: 'none', md: 'block' }}
+
       >
         <Box mt={5} mb={5}></Box>
         <Image
@@ -39,7 +40,7 @@ export default function Sidebar() {
         />
         <Box mt={5} mb={5}></Box>
         <Center>
-          <Heading as='h5' size='sm'>Quick Links</Heading>
+          <Heading as='h5' size='md'>Quick Links</Heading>
         </Center>
         <Box mt={5} mb={5}></Box>
         <Center>
@@ -73,7 +74,7 @@ export default function Sidebar() {
         </Center>
         <Box mt={5} mb={5}></Box>
         <Center>
-          <Heading as='h5' size='sm'>Recent Posts {useColorModeValue("light", "dark")}</Heading>
+          <Heading as='h5' size='md'>Recent Posts {useColorModeValue("light", "dark")}</Heading>
         </Center>
 
         <Box mt={5} mb={5}></Box>

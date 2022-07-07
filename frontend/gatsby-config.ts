@@ -7,6 +7,7 @@ const config: GatsbyConfig = {
     title: `sudhirattri.com`,
     siteUrl: `https://sudhirattri.com`
   },
+  pathPrefix: "/",
   plugins: [{
     resolve: `gatsby-plugin-sass`,
     options: {
