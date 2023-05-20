@@ -25,7 +25,7 @@ jobs:
 
       - name: build
         env:
-          BASE_PATH: '/'
+          BASE_PATH: '/sudhirattri.com'
         run: |
           pnpm run build
           touch build/.nojekyll
