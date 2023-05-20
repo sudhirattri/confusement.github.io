@@ -1,0 +1,48 @@
+@import "./styles/prism.css";
+@import "./styles/prism-dark.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[data-theme="dark"] .mynav {
+    background-color: rgb(42 48 60 / 0.3);
+}
+
+[data-theme="light"] .mynav {
+    background-color: rgb(255 255 255 / 0.3);
+}
+h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  h3 {
+    @apply text-lg;
+  }
+ul{
+  list-style-type: disc;
+}
+
+a:hover{
+  text-decoration-line: underline;
+}
+.inline-icon-svg{
+  display: inline;
+  margin-right:10px;
+  vertical-align: middle;
+}
+.md-image{
+  margin: 20px
+}
+
+.posts-image{
+  max-height:200px;
+}
+
+[data-theme="dark"]  .last-updated-text{
+  color: #b3b3b3;
+}
+[data-theme="light"]  .last-updated-text{
+  color: #314158;
+}
