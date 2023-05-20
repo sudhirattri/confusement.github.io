@@ -4,7 +4,6 @@
     import type { PageServerData } from "./$types";
     import { base } from "$app/paths";
     export let data: PageServerData;
-    console.log("DATA", data);
 </script>
 
 <svelte:head>

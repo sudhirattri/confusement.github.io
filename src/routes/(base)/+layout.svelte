@@ -1,5 +1,5 @@
 <script lang="ts">
-  import "../app.css";
+  import "../../app.css";
   import { onMount } from "svelte";
   import { themeChange } from "theme-change";
   import * as config from "$lib/config";
@@ -16,10 +16,17 @@
   });
 </script>
 
+<svelte:head>
+  <title>About me - sudhirattri.com</title>
+  <meta
+    name="Portfolio website - sudhirattri.com"
+    content="Sudhir Attri, personal website"
+  />
+</svelte:head>
 <div>
   <Header />
   <!-- Contents -->
-  <div class="md:w-4/6 md:mx-auto my-8">
+  <div class="md:w-4/6 w-5/6 mx-auto my-8 pt-16">
     <slot />
   </div>
 

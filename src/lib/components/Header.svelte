@@ -10,66 +10,64 @@
     });
 </script>
 
-<!-- Navbar -->
-<div class="navbar bg-base-100 md:sticky top-0 z-50 mynav backdrop-blur-sm">
-    <div class="dropdown">
-        <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-        <!-- svelte-ignore a11y-label-has-associated-control -->
-        <label tabindex="0" class="btn btn-ghost btn-circle">
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                ><path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4 6h16M4 12h16M4 18h7"
-                /></svg
+<div class="navbar bg-base-100 mynav backdrop-blur-md">
+    <div class="navbar-start">
+        <div class="dropdown">
+            <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
+            <!-- svelte-ignore a11y-label-has-associated-control -->
+            <label tabindex="0" class="btn btn-ghost btn-circle">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    ><path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h7"
+                    /></svg
+                >
+            </label>
+            <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
+            <ul
+                tabindex="0"
+                class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
-        </label>
-        <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-        <ul
-            tabindex="0"
-            class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-        >
-            <li><a href={`${base}/`}>Homepage</a></li>
-            <li><a href={`${base}/`}>Portfolio</a></li>
-            <li><a href={`${base}/about`}>About</a></li>
-        </ul>
-    </div>
-    <div class=" navbar-start">
-        <a
-            href={`${base}/`}
-            class="btn btn-ghost normal-case text-xl no-animation"
+                <li><a href={`${base}/`}>Homepage</a></li>
+                <li><a href={`${base}/portfolio`}>Portfolio</a></li>
+                <li><a href={`${base}/about`}>About</a></li>
+            </ul>
+        </div>
+        <a class="btn btn-ghost normal-case text-xl" href={`${base}/`}
             >{config.title}</a
         >
     </div>
-
-    <div class="flex-none gap-2 navbar-center">
+    <div class="navbar-center">
         <div class="form-control">
             <input
                 type="text"
                 placeholder="Search this website"
-                class="input input-bordered invisible md:visible"
+                class="input input-bordered md:block hidden"
             />
         </div>
     </div>
-
     <div class="navbar-end">
-        <!-- <button class="btn" data-toggle-theme="dark,light">Dark</button> -->
-        <label class="swap swap-rotate">
-            <!-- this hidden checkbox controls the state -->
+        <label
+            class="swap swap-rotate"
+            for="theme-switch-button"
+            aria-label="Switch Dark Mode"
+        >
             <input
+                id="theme-switch-button"
                 type="checkbox"
                 data-toggle-theme="dark,light"
                 autocomplete="on"
                 checked={darkThemeCheckbox}
+                aria-label="Switch Dark Mode"
             />
 
-            <!-- sun icon -->
             <svg
                 class="swap-on fill-current w-10 h-10"
                 xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +77,6 @@
                 /></svg
             >
 
-            <!-- moon icon -->
             <svg
                 class="swap-off fill-current w-10 h-10"
                 xmlns="http://www.w3.org/2000/svg"

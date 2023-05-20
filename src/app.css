@@ -4,6 +4,19 @@
 @tailwind components;
 @tailwind utilities;
 
+.mynav{
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+}
+
+[data-theme="dark"] {
+  --p: 217.35 9.315% 48.196%;
+}
+[data-theme="light"] {
+  --p: 217.35 4.315% 72.196%;
+}
+
 [data-theme="dark"] .mynav {
     background-color: rgb(42 48 60 / 0.3);
 }

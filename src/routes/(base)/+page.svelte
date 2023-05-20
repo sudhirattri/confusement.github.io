@@ -4,7 +4,7 @@
     // export let data: PageServerData;
 </script>
 
-<div class="hero min-h-fit h-72 bg-base-200 mb-8">
+<div class="hero min-h-fit h-96 md:h-72 bg-base-200 mb-8 overflow-auto">
     <div class="hero-content text-left">
         <div class="max-w-lg">
             <h1 class="text-3xl font-bold">Sudhir Attri</h1>
@@ -41,7 +41,7 @@
     </div>
 </div>
 
-<h3>Quick Links</h3>
+<p>Quick Links</p>
 <ul>
     <li><a href="https://github.com/sudhirattri/dotfiles">Dotfiles repo</a></li>
     <li><a href="https://github.com/sudhirattri/">Github Page</a></li>
