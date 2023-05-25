@@ -1,5 +1,5 @@
 <svelte:head>
-    <title>About me - sudhirattri.com</title>
+    <title>Diffusion demo</title>
     <meta
         name="Portfolio website - sudhirattri.com"
         content="Sudhir Attri, personal website"
